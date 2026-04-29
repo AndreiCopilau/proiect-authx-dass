@@ -5,6 +5,10 @@ import hashlib
 app = Flask(__name__)
 app.secret_key = 'cheie_slaba_de_test'
 
+app.config.update(
+    SESSION_COOKIE_HTTPONLY=False
+)
+
 # VULNERABILITATE 4.5: Sesiuni nesigure (fara HttpOnly, fara SameSite in configuratii)
 
 def get_db_connection():
@@ -66,7 +70,7 @@ def login():
             flash('Acest utilizator nu exista in baza de date!')
             connectionDB.close()
             return render_template('login.html')
-            
+        
         # VULNERABILITATE 4.3: Brute force / Lipsa rate limiting (Nu blocam contul indiferent de cate ori greseste parola)
         if user['password_hash'] != weak_md5_hash(password):
             flash('Parola este incorecta!')
