@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Setare parolă nouă</h2>
+
+<form method="POST">
+    <label>Introdu noua parolă:</label>
+    <input type="password" name="new_password" required>
+    
+    <button type="submit" class="btn">Salvează parola</button>
+</form>
+{% endblock %}

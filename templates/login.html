@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Autentificare</h2>
+
+<form method="POST">
+    <label>Email:</label>
+    <input type="email" name="email" required>
+    
+    <label>Parolă:</label>
+    <input type="password" name="password" required>
+    
+    <button type="submit" class="btn">Login</button>
+</form>
+<br>
+<a href="/forgot_password" style="margin-right: 15px;">Ai uitat parola?</a>
+<a href="/register">Nu ai cont?</a>
+{% endblock %}

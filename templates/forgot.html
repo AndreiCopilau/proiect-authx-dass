@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Resetare Parolă</h2>
+
+<form method="POST">
+    <label>Adresa de email:</label>
+    <input type="email" name="email" required>
+    
+    <button type="submit" class="btn">Trimite link de resetare</button>
+</form>
+<br>
+<a href="/login">Înapoi la pagina de autentificare</a>
+{% endblock %}

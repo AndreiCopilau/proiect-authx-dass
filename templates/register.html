@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+<{% block content %}
+<h2>Creare cont nou</h2>
+
+<form method="POST">
+    <label>Email:</label>
+    <input type="email" name="email" required>
+    
+    <label>Parolă:</label>
+    <input type="password" name="password" required>
+    
+    <button type="submit" class="btn">Înregistrare</button>
+</form>
+<br>
+<p>Ai deja cont? <a href="/login">Loghează-te aici.</a></p>
+{% endblock %}
